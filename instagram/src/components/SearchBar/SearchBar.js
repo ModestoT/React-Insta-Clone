@@ -9,7 +9,7 @@ function SearchBar(props){
                 <h1>Instagram</h1>
             </div>
             <div className="search">
-                <i class="fas fa-search"></i>
+                <i className="fas fa-search"></i>
                 <input className="searchBar" placeholder="Search"/>
             </div>
             <div className="icons">

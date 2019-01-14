@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './CommentSection.css';
 
 function CommentSection(props) {
     return (
         <div className="post-container">
-            <img src={props.post.thumbnailUrl} alt="Thumbnail"/>
-            <h1 className="post-username">{props.post.username}</h1>
-            <img src={props.post.imageUrl} alt="Post"/>
+            <div className="post-header">
+                <img className="user-profile-pic"src={props.post.thumbnailUrl} alt="Thumbnail"/>
+                <h1 className="post-username">{props.post.username}</h1>
+            </div>
+            <img className="user-post-pic"src={props.post.imageUrl} alt="Post"/>
             <p className="likes">{props.post.likes} likes</p>
                 {props.post.comments.map((comment, index) => {
                     return (

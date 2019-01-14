@@ -1,11 +1,14 @@
 header {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding-top: 30px;
+    padding: 25px 10%;
+    border-bottom: 1px solid lightgrey;
 }
 
 .logo {
     display: flex;
+    align-items: center;
 }
 
 .fa-camera {
