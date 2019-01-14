@@ -1,15 +1,22 @@
 import React from 'react';
-
+import './SearchBar.css';
 function SearchBar(props){
     return (
         <header>
-            <i class="fas fa-camera"></i>
-            <div className="line"/>
-            <h1 className="logo">Instagram</h1>
-            <input className="searchBar" placeholder="Search"/>
-            <i class="far fa-compass"></i>
-            <i class="far fa-heart"></i>
-            <i class="far fa-user"></i>
+            <div className="logo">
+                <i className="fas fa-camera"></i>
+                <div className="line"/>
+                <h1>Instagram</h1>
+            </div>
+            <div className="search">
+                <i class="fas fa-search"></i>
+                <input className="searchBar" placeholder="Search"/>
+            </div>
+            <div className="icons">
+                <i className="far fa-compass"></i>
+                <i className="far fa-heart"></i>
+                <i className="far fa-user"></i>
+            </div>
         </header>
     );
 }

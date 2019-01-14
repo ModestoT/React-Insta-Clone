@@ -1,0 +1,57 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+}
+
+.logo {
+    display: flex;
+}
+
+.fa-camera {
+    font-size: 2rem;
+}
+
+.far {
+    padding-right: 17%;
+}
+
+.line {
+    border-right: 1px solid black;
+    height: 35px;
+    margin: 0 13%;
+}
+
+.logo h1 {
+    font-size: 1.6rem;
+}
+
+.search {
+    position: relative;
+    color: #C9CACC;
+}
+.search .fa-search {
+    position: absolute;
+    top: 13px;
+    left: 37%;
+    font-size: 13px;
+}
+
+::placeholder {
+    color: #C9CACC;
+    font-weight: bold;
+}
+.search .searchBar {
+    margin-left: 5%;
+    text-align: center;
+    padding: 2% 11%;
+    background: #FAFAFA;
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    font-size: .9rem;
+}
+
+.icons {
+    display: flex;
+    font-size: 1.6rem;
+}
