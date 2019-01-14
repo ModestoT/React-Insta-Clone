@@ -8,7 +8,7 @@ function PostContainer(props){
         <div className="posts-container">
             {props.postData.map((post, index) => {
                 return <CommentSection post={post} key={index}/>
-            })};
+            })}
         </div>
     );
 }

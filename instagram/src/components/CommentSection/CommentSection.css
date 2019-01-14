@@ -1,6 +1,7 @@
 
 .post-container {
     border: 1px solid lightgrey;
+    border-radius: 3px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -10,15 +11,19 @@
 .post-header {
     display: flex;
     padding: 2%;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+    width: 100%;
 }
 
 .post-username {
     padding-left: 6%;
+    font-weight: bold;
 }
 
 .user-profile-pic{
     border-radius: 50%;
-    width: 16%;
+    width: 7%;
     height: 100%;
 }
 
@@ -27,6 +32,16 @@
     height: 100%;
 }
 
+.comments-section {
+    padding: 2% 3%;
+    width: 100%;
+}
+
+.post-icons {
+    display: flex;
+    font-size: 1.6rem;
+    width: 15%;
+}
 .likes {
     width: 100%;
 }
@@ -34,4 +49,22 @@
 .comments {
     display: flex;
     width: 100%;
+}
+
+.comment-username {
+    font-weight: bold;
+}
+
+.comment-text {
+    padding-left: 1%;
+}
+
+.timestamp {
+    border-bottom: 1px solid lightgrey;
+}
+
+.comment-box {
+    border: none;
+    font-size: .9rem;
+    margin-top: 20px;
 }

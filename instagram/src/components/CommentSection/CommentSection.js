@@ -10,20 +10,27 @@ function CommentSection(props) {
                 <h1 className="post-username">{props.post.username}</h1>
             </div>
             <img className="user-post-pic"src={props.post.imageUrl} alt="Post"/>
-            <p className="likes">{props.post.likes} likes</p>
-                {props.post.comments.map((comment, index) => {
-                    return (
-                        <div key ={index} className="comments">
-                            <h2 className="comment-username">{comment.username}</h2>
-                            <p className="comment-text">{comment.text}</p>
-                        </div>
-                    )
-                })};
-            <p className="timestamp">{props.post.timestamp}</p>
-            <input
-                placeholder="Add a comment..."/>
+           <div className="comments-section">
+                <div className="post-icons"> 
+                        <i className="far fa-heart"></i>
+                        <i className="far fa-comment"></i>
+                    </div>
+                    <p className="likes">{props.post.likes} likes</p>
+                        {props.post.comments.map((comment, index) => {
+                            return (
+                                <div key ={index} className="comments">
+                                    <h2 className="comment-username">{comment.username}</h2>
+                                    <p className="comment-text">{comment.text}</p>
+                                </div>
+                            )
+                        })}
+                    <p className="timestamp">{props.post.timestamp}</p>
+                    <input
+                        className="comment-box"
+                        placeholder="Add a comment..."/>
+           </div>
         </div>
-    );
+    )
 }
 
 CommentSection.propTypes = {
