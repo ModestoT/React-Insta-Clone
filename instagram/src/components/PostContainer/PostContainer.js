@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CommentSection from '../CommentSection/CommentSection';
 
 function PostContainer(props){
@@ -10,5 +11,9 @@ function PostContainer(props){
         </div>
     );
 }
+
+PostContainer.propTypes = {
+    postData: PropTypes.array.isRequired
+};
 
 export default PostContainer;

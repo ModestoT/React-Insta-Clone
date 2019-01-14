@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 function CommentSection(props) {
     return (
@@ -7,9 +8,9 @@ function CommentSection(props) {
             <h1 className="post-username">{props.post.username}</h1>
             <img src={props.post.imageUrl} alt="Post"/>
             <p className="likes">{props.post.likes} likes</p>
-                {props.post.comments.map((comment) => {
+                {props.post.comments.map((comment, index) => {
                     return (
-                        <div className="comments">
+                        <div key ={index} className="comments">
                             <h2 className="comment-username">{comment.username}</h2>
                             <p className="comment-text">{comment.text}</p>
                         </div>
@@ -21,5 +22,16 @@ function CommentSection(props) {
         </div>
     );
 }
+
+CommentSection.propTypes = {
+    post: PropTypes.shape({
+        username: PropTypes.string.isRequired,
+        likes: PropTypes.number,
+        timestamp: PropTypes.string.isRequired,
+        comments: PropTypes.array,
+        thumbnailUrl: PropTypes.string,
+        imageUrl: PropTypes.string
+    })
+};
 
 export default CommentSection;
