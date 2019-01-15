@@ -9,7 +9,7 @@ class App extends Component {
     super();
     this.state = {
       dataArray: [],
-      comment: ''
+      comments: []
     };
   }
 
@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <div className="App">
         <SearchBar />
-        <PostContainer postData={this.state.dataArray} />
+        <PostContainer postData={this.state.dataArray} comments={this.state.comments}/>
       </div>
     );
   }

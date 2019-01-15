@@ -17,7 +17,7 @@ function CommentSection(props) {
                     <i className="far fa-comment"></i>
                 </div>
                     <p className="likes">{props.post.likes} likes</p>
-                        {props.post.comments.map((comment, index) => {
+                        {props.comments.map((comment, index) => {
                             return (
                                 <div key ={index} className="comments">
                                     <h2 className="comment-username">{comment.username}</h2>
