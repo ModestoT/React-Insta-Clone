@@ -30,7 +30,7 @@ function CommentSection(props) {
                         className="comment-box"
                         placeholder="Add a comment..."
                         
-                        onClick={(e) => console.log()}/>
+                        onClick={(e) => props.addNewComment(e, props.index)}/>
            </div>
         </div>
     )
