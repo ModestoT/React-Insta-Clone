@@ -28,7 +28,8 @@ function CommentSection(props) {
                     <p className="timestamp">{Moment().startOf('day').fromNow().toUpperCase()}</p>
                     <input
                         className="comment-box"
-                        placeholder="Add a comment..."/>
+                        placeholder="Add a comment..."
+                        onClick={(e) => console.log(e.target)}/>
            </div>
         </div>
     )

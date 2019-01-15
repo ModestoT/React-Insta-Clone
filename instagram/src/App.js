@@ -8,7 +8,8 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      dataArray: dummyData
+      dataArray: dummyData,
+      comment: ''
     };
   }
   
@@ -16,7 +17,7 @@ class App extends Component {
     return (
       <div className="App">
         <SearchBar />
-        <PostContainer postData={this.state.dataArray}/>
+        <PostContainer postData={this.state.dataArray} />
       </div>
     );
   }
