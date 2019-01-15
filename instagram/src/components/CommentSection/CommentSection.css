@@ -63,6 +63,8 @@
 
 .timestamp {
     border-bottom: 1px solid lightgrey;
+    font-size: .8rem;
+    color: darkgrey;
 }
 
 .comment-box {
@@ -70,4 +72,5 @@
     font-size: .9rem;
     margin-top: 15px;
     height: 30px;
+    width: 100%;
 }
