@@ -8,9 +8,13 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      dataArray: dummyData,
+      dataArray: [],
       comment: ''
     };
+  }
+
+  componentDidMount() {
+    this.setState({dataArray: dummyData});
   }
   
   render() {

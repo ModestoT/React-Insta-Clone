@@ -11,11 +11,11 @@ function CommentSection(props) {
                 <h1 className="post-username">{props.post.username}</h1>
             </div>
             <img className="user-post-pic"src={props.post.imageUrl} alt="Post"/>
-           <div className="comments-section">
+            <div className="comments-section">
                 <div className="post-icons"> 
-                        <i className="far fa-heart"></i>
-                        <i className="far fa-comment"></i>
-                    </div>
+                    <i className="far fa-heart"></i>
+                    <i className="far fa-comment"></i>
+                </div>
                     <p className="likes">{props.post.likes} likes</p>
                         {props.post.comments.map((comment, index) => {
                             return (
@@ -29,7 +29,8 @@ function CommentSection(props) {
                     <input
                         className="comment-box"
                         placeholder="Add a comment..."
-                        onClick={(e) => console.log(e.target)}/>
+                        
+                        onClick={(e) => console.log()}/>
            </div>
         </div>
     )
