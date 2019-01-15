@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Moment from 'moment';
+import Comments from './Comments';
 import './CommentSection.css';
 
 function CommentSection(props) {
@@ -17,20 +17,7 @@ function CommentSection(props) {
                     <i className="far fa-comment"></i>
                 </div>
                     <p className="likes">{props.post.likes} likes</p>
-                        {props.comments.map((comment, index) => {
-                            return (
-                                <div key ={index} className="comments">
-                                    <h2 className="comment-username">{comment.username}</h2>
-                                    <p className="comment-text">{comment.text}</p>
-                                </div>
-                            )
-                        })}
-                    <p className="timestamp">{Moment().startOf('day').fromNow().toUpperCase()}</p>
-                    <input
-                        className="comment-box"
-                        placeholder="Add a comment..."
-                        
-                        onClick={(e) => props.addNewComment(e, props.index)}/>
+                    <Comments comments={props.post.comments}/>
            </div>
         </div>
     )
