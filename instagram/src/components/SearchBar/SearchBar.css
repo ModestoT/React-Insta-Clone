@@ -35,10 +35,11 @@ header {
     color: #C9CACC;
 }
 .search .fa-search {
-    position: absolute;
-    top: 8px;
+    position: relative;
+    top: 28px;
     left: 37%;
     font-size: 13px;
+    z-index: 2;
 }
 
 ::placeholder {
@@ -46,6 +47,7 @@ header {
     font-weight: bold;
 }
 .search .searchBar {
+    position: relative;
     margin-left: 5%;
     text-align: center;
     padding: 2% 11%;
@@ -53,6 +55,11 @@ header {
     border: 1px solid lightgrey;
     border-radius: 3px;
     font-size: .9rem;
+}
+
+.search .searchBar:focus {
+    text-align: start;
+    z-index: 3;
 }
 
 .icons {
