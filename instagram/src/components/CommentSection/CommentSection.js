@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Moment from 'moment';
 import './CommentSection.css';
 
 function CommentSection(props) {
@@ -24,7 +25,7 @@ function CommentSection(props) {
                                 </div>
                             )
                         })}
-                    <p className="timestamp">{props.post.timestamp}</p>
+                    <p className="timestamp">{Moment().startOf('day').fromNow()}</p>
                     <input
                         className="comment-box"
                         placeholder="Add a comment..."/>

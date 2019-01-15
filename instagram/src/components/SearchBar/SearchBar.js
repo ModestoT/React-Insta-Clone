@@ -10,7 +10,10 @@ function SearchBar(props){
             </div>
             <div className="search">
                 <i className="fas fa-search"></i>
-                <input className="searchBar" placeholder="Search"/>
+                <input 
+                    className="searchBar" 
+                    placeholder="Search"
+                />
             </div>
             <div className="icons">
                 <i className="far fa-compass"></i>
