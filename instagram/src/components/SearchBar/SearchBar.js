@@ -13,6 +13,8 @@ function SearchBar(props){
                 <input 
                     className="searchBar" 
                     placeholder="Search"
+                    value={props.filterPost}
+                    onChange={props.handleSearch}
                 />
             </div>
             <div className="icons">

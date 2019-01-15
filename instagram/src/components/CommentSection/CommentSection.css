@@ -17,6 +17,10 @@
     width: 100%;
 }
 
+.hide {
+    display: none;
+}
+
 .post-username {
     padding-left: 2%;
     font-weight: bold;

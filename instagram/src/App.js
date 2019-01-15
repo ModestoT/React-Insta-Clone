@@ -8,8 +8,29 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      dataArray: []
+      dataArray: [],
+      filterPost: ''
     };
+  }
+
+  handleSearch = e => {
+    this.setState({ filterPost: e.target.value, 
+    }, () => {
+      this.filterPost();
+    });
+  }
+
+  filterPost = () => {
+    const currentList = document.querySelectorAll('.post-container');
+    const newList = Array.from(currentList);
+    
+    newList.forEach(post => {
+      if(post.firstChild.textContent.indexOf(this.state.filterPost) === -1){
+        post.classList.add('hide');
+      } else {
+        post.classList.remove('hide');
+      }
+    })
   }
 
   componentDidMount() {
@@ -19,7 +40,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SearchBar />
+        <SearchBar handleSearch={this.handleSearch} filterPost={this.state.filterPost}/>
         <PostContainer postData={this.state.dataArray}/>
       </div>
     );
