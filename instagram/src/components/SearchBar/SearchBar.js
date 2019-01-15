@@ -4,7 +4,7 @@ function SearchBar(props){
     return (
         <header>
             <div className="logo">
-                <i className="fas fa-camera"></i>
+                <i class="fab fa-instagram"></i>
                 <div className="line"/>
                 <h1>Instagram</h1>
             </div>
