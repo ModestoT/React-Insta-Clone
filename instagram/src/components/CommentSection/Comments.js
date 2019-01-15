@@ -22,7 +22,34 @@ class Comments extends React.Component {
         comments.push(newComment);
 
         this.setState({comments: comments, comment: ''});
+
+        setTimeout(() => {
+            this.saveComments();
+          }, 500);
     }
+
+    componentDidMount() {
+        const id = this.props.id;
+        console.log(id)
+        if (localStorage.getItem(id)) {
+            this.setState({
+                comments: JSON.parse(localStorage.getItem(this.props.id))
+            });
+        } else {
+            this.saveComments();
+        }
+    }
+    
+    componenetWillUnmount() {
+        this.saveComments();
+    }
+
+    saveComments = () => {
+        localStorage.setItem(
+          this.props.id,
+          JSON.stringify(this.state.comments)
+        );
+    };
 
     render(){
         return (

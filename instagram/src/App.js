@@ -34,14 +34,14 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({dataArray: dummyData});
+    this.setState({dataArray: dummyData});    
   }
   
   render() {
     return (
       <div className="App">
         <SearchBar handleSearch={this.handleSearch} filterPost={this.state.filterPost}/>
-        <PostContainer postData={this.state.dataArray}/>
+        <PostContainer postData={this.state.dataArray} />
       </div>
     );
   }
