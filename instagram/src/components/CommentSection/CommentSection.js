@@ -3,24 +3,40 @@ import PropTypes from 'prop-types';
 import Comments from './Comments';
 import './CommentSection.css';
 
-function CommentSection(props) {
-    return (
-        <div className="post-container">
-            <div className="post-header">
-                <img className="user-profile-pic"src={props.post.thumbnailUrl} alt="Thumbnail"/>
-                <h1 className="post-username">{props.post.username}</h1>
-            </div>
-            <img className="user-post-pic"src={props.post.imageUrl} alt="Post"/>
-            <div className="comments-section">
-                <div className="post-icons"> 
-                    <i className="far fa-heart"></i>
-                    <i className="far fa-comment"></i>
+class CommentSection extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            likes: props.post.likes
+        };
+    }
+
+    adjustLikes = () => {
+        let likes = this.state.likes +1;
+
+        this.setState({likes: likes});
+    };
+
+    render() {
+        return (
+            <div className="post-container">
+                <div className="post-header">
+                    <img className="user-profile-pic"src={this.props.post.thumbnailUrl} alt="Thumbnail"/>
+                    <h1 className="post-username">{this.props.post.username}</h1>
                 </div>
-                    <p className="likes">{props.post.likes} likes</p>
-                    <Comments comments={props.post.comments}/>
-           </div>
-        </div>
-    )
+                <img className="user-post-pic"src={this.props.post.imageUrl} alt="Post"/>
+                <div className="comments-section">
+                    <div className="post-icons"> 
+                        <span onClick={this.adjustLikes}><i className="far fa-heart"></i></span>
+                        <i className="far fa-comment"></i>
+                    </div>
+                        <p className="likes">{this.state.likes} likes</p>
+                        <Comments comments={this.props.post.comments}/>
+               </div>
+            </div>
+        )
+    }
+    
 }
 
 CommentSection.propTypes = {
