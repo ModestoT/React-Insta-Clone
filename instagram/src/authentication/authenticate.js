@@ -13,8 +13,6 @@ const authenticate = App => Login =>
             if(localStorage.getItem('User')){
                 this.setState(prevState => ({loggedIn: !prevState.loggedIn}));
             }
-            // this.setState({loggedIn: false});
-            console.log(localStorage.getItem('User'))
         }
 
         render(){

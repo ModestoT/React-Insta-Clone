@@ -17,7 +17,7 @@ class Comments extends React.Component {
 
     addNewComment = (e) => {
         e.preventDefault();
-        const newComment = { username: "BillyGachi", text: this.state.comment};
+        const newComment = { username: localStorage.getItem('User'), text: this.state.comment};
         const comments = this.state.comments.slice();
 
         comments.push(newComment);
