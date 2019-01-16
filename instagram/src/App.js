@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+
 import dummyData from './dummy-data';
 import PostPage from './components/PostContainer/PostPage';
+import authenticate from './authentication/authenticate';
+
 import './App.css';
 
 class App extends Component {
@@ -42,9 +45,10 @@ class App extends Component {
         {/* <SearchBar handleSearch={this.handleSearch} filterPost={this.state.filterPost}/>
         <PostContainer postData={this.state.dataArray} /> */}
         <PostPage handleSearch={this.handleSearch} filterPost={this.state.filterPost} postData={this.state.dataArray}/>
+        {/* <Auth handleSearch={this.handleSearch} filterPost={this.state.filterPost} postData={this.state.dataArray}/> */}
       </div>
     );
   }
 }
 
-export default App;
+export default authenticate(App);
