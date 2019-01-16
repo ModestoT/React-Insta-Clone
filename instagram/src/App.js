@@ -13,7 +13,6 @@ class App extends Component {
     this.state = {
       dataArray: [],
       filterPost: '',
-      loggedIn: false,
       username: '',
       password: ''
     };
@@ -45,7 +44,6 @@ class App extends Component {
 
   login = e => {
     const user = this.state.username;
-    this.setState({loggedIn: true});
 
     localStorage.setItem('User', user)
   }
@@ -60,11 +58,11 @@ class App extends Component {
       <div className="App">
         {/* <SearchBar handleSearch={this.handleSearch} filterPost={this.state.filterPost}/>
         <PostContainer postData={this.state.dataArray} /> */}
-        <Login handleLogin={this.handleLogin} login={this.login}/>
+        {/* <Login handleLogin={this.handleLogin} login={this.login}/> */}
         <PostPage handleSearch={this.handleSearch} filterPost={this.state.filterPost} postData={this.state.dataArray}/>
       </div>
     );
   }
 }
 
-export default authenticate(App);
+export default authenticate(App)(Login);
