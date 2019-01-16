@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import dummyData from './dummy-data';
 import PostPage from './components/PostContainer/PostPage';
 import authenticate from './authentication/authenticate';
+import Login from './components/Login/Login';
 
 import './App.css';
 
@@ -11,7 +12,10 @@ class App extends Component {
     super();
     this.state = {
       dataArray: [],
-      filterPost: ''
+      filterPost: '',
+      loggedIn: false,
+      username: '',
+      password: ''
     };
   }
 
@@ -35,8 +39,20 @@ class App extends Component {
     })
   }
 
+  handleLogin = e => {
+    this.setState({[e.target.name] : e.target.value});
+  }
+
+  login = e => {
+    const user = this.state.username;
+    this.setState({loggedIn: true});
+
+    localStorage.setItem('User', user)
+  }
+
   componentDidMount() {
-    this.setState({dataArray: dummyData});    
+    this.setState({dataArray: dummyData});
+
   }
   
   render() {
@@ -44,8 +60,8 @@ class App extends Component {
       <div className="App">
         {/* <SearchBar handleSearch={this.handleSearch} filterPost={this.state.filterPost}/>
         <PostContainer postData={this.state.dataArray} /> */}
+        <Login handleLogin={this.handleLogin} login={this.login}/>
         <PostPage handleSearch={this.handleSearch} filterPost={this.state.filterPost} postData={this.state.dataArray}/>
-        {/* <Auth handleSearch={this.handleSearch} filterPost={this.state.filterPost} postData={this.state.dataArray}/> */}
       </div>
     );
   }
