@@ -1,4 +1,5 @@
 import  React from 'react';
+import PropTypes from 'prop-types';
 import Moment from 'moment';
 
 class Comments extends React.Component {
@@ -30,7 +31,7 @@ class Comments extends React.Component {
 
     componentDidMount() {
         const id = this.props.id;
-        console.log(id)
+        // console.log(localStorage.getItem(id))
         if (localStorage.getItem(id)) {
             this.setState({
                 comments: JSON.parse(localStorage.getItem(this.props.id))
@@ -74,5 +75,11 @@ class Comments extends React.Component {
         );
     }
 }
+
+Comments.propTypes = {
+    comments: PropTypes.arrayOf(
+      PropTypes.shape({text: PropTypes.string, username: PropTypes.string})
+    )
+  };
 
 export default Comments;
