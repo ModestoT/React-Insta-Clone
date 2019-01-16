@@ -59,7 +59,7 @@ class Comments extends React.Component {
                     return (
                         <div key ={index} className="comments">
                             <h2 className="comment-username">{comment.username}</h2>
-                            <p className="comment-text">{comment.text}</p>
+                            <p className="comment-text">{comment.text}<button className="delete-comment">delete</button></p>
                         </div>
                     )
                 })}
