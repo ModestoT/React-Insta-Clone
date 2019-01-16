@@ -47,8 +47,10 @@
     font-size: 1.6rem;
     width: 15%;
 }
-
-.fa-heart:hover {
+.post-icons span {
+    padding-right: 4%;
+}
+.post-icons .fa-heart:hover {
     color: red;
 }
 
@@ -72,7 +74,11 @@
 }
 
 .delete-comment {
-  display: none;
+  opacity: 0;
+}
+
+.delete-comment:hover {
+    opacity: 1;
 }
 
 
