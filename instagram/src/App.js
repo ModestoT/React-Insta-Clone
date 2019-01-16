@@ -12,9 +12,7 @@ class App extends Component {
     super();
     this.state = {
       dataArray: [],
-      filterPost: '',
-      username: '',
-      password: ''
+      filterPost: ''
     };
   }
 
@@ -38,15 +36,6 @@ class App extends Component {
     })
   }
 
-  handleLogin = e => {
-    this.setState({[e.target.name] : e.target.value});
-  }
-
-  login = e => {
-    const user = this.state.username;
-
-    localStorage.setItem('User', user)
-  }
 
   componentDidMount() {
     this.setState({dataArray: dummyData});
