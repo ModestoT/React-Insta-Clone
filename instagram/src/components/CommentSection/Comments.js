@@ -17,7 +17,7 @@ class Comments extends React.Component {
 
     addNewComment = (e) => {
         e.preventDefault();
-        const newComment = {text: this.state.comment, username: "BillyGachi"};
+        const newComment = { username: "BillyGachi", text: this.state.comment};
         const comments = this.state.comments.slice();
 
         comments.push(newComment);
@@ -28,6 +28,22 @@ class Comments extends React.Component {
             this.saveComments();
           }, 500);
     }
+
+    deleteComment = e => {
+        e.preventDefault();
+        const remove = e.target.id;
+        const comments = this.state.comments;
+        
+        comments.map((comment, index) => {
+            // if(remove === index){
+            //     return console.log(`Selected index ${index} to be removed`)
+            // } else {
+            //     return console.log("nothing")
+            // } 
+            return console.log(comment)
+        })
+        console.log(`Target id: ${remove}`)
+    };
 
     componentDidMount() {
         const id = this.props.id;
@@ -57,9 +73,9 @@ class Comments extends React.Component {
             <div>
                 {this.state.comments.map((comment, index) => {
                     return (
-                        <div key ={index} className="comments">
+                        <div key ={index} id={index} className="comments">
                             <h2 className="comment-username">{comment.username}</h2>
-                            <p className="comment-text">{comment.text}<button className="delete-comment">delete</button></p>
+                            <p className="comment-text">{comment.text}<button className="delete-comment" id={index} onClick={this.deleteComment}>delete</button></p>
                         </div>
                     )
                 })}

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import dummyData from './dummy-data';
-import PostContainer from './components/PostContainer/PostContainer';
-import SearchBar from './components/SearchBar/SearchBar';
+import PostPage from './components/PostContainer/PostPage';
 import './App.css';
 
 class App extends Component {
@@ -40,8 +39,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SearchBar handleSearch={this.handleSearch} filterPost={this.state.filterPost}/>
-        <PostContainer postData={this.state.dataArray} />
+        {/* <SearchBar handleSearch={this.handleSearch} filterPost={this.state.filterPost}/>
+        <PostContainer postData={this.state.dataArray} /> */}
+        <PostPage handleSearch={this.handleSearch} filterPost={this.state.filterPost} postData={this.state.dataArray}/>
       </div>
     );
   }
