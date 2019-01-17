@@ -43,6 +43,7 @@ const CommentBox = styled.input `
     margin-top: 15px;
     height: 30px;
     width: 100%;
+    padding-left: 1%;
 `;
 
 class Comments extends React.Component {
