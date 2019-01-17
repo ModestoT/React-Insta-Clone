@@ -17,8 +17,12 @@ class Login extends React.Component {
     
     login = e => {
         const user = this.state.username;
-
-        localStorage.setItem('User', user)
+        if(this.state.password.length < 3) {
+            alert("Password must be atleast 3 characters long!");
+        } else {
+            localStorage.setItem('User', user)
+        }
+       
     }
 
     render() {
