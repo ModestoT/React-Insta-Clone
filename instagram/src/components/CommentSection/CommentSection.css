@@ -54,6 +54,10 @@
     color: red;
 }
 
+.liked {
+    color: red;
+}
+
 .likes {
     width: 100%;
     font-weight: bold;

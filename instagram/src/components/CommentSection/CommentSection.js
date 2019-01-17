@@ -7,14 +7,21 @@ class CommentSection extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            likes: props.post.likes
+            likes: props.post.likes,
+            liked: false
         };
     }
 
-    adjustLikes = () => {
+    adjustLikes = (e) => {
         let likes = this.state.likes +1;
-
-        this.setState({likes: likes});
+        let unliked = this.state.likes -1;
+        if(this.state.liked === false){
+            this.setState({likes: likes, liked: !this.state.liked});
+            e.target.classList.add('liked');
+        } else {
+            this.setState({likes: unliked, liked: !this.state.liked});
+            e.target.classList.remove('liked');
+        }
     };
 
     render() {
