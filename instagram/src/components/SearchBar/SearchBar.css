@@ -66,4 +66,5 @@ header {
     display: flex;
     font-size: 1.6rem;
     width: 8%;
+    cursor: pointer;
 }

@@ -20,7 +20,7 @@ function SearchBar(props){
             <div className="icons">
                 <i className="far fa-compass"></i>
                 <i className="far fa-heart"></i>
-                <i className="far fa-user"></i>
+               <span onClick={() => {localStorage.removeItem('User');window.location.reload()}}><i className="far fa-user"></i></span>
             </div>
         </header>
     );

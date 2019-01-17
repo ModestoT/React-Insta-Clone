@@ -49,6 +49,7 @@
 }
 .post-icons span {
     padding-right: 4%;
+    cursor: pointer;
 }
 .post-icons .fa-heart:hover {
     color: red;
