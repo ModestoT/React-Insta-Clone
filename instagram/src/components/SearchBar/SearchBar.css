@@ -1,67 +1,14 @@
-header {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    padding: 15px 4%;
-    border-bottom: 1px solid lightgrey;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
 .fa-instagram {
     font-size: 2rem;
 }
 
-.line {
-    border-right: 1px solid black;
-    height: 35px;
-    margin: 0 13%;
-}
-
-.logo h1 {
-    font-size: 1.8rem;
-    font-family: 'Lobster', cursive;
-}
-
-.search {
-    position: relative;
-    color: #C9CACC;
-}
-.search .fa-search {
+.fa-search {
     position: relative;
     top: 28px;
     left: 37%;
     font-size: 13px;
     z-index: 2;
-}
-
-::placeholder {
     color: #C9CACC;
-    font-weight: bold;
-}
-.search .searchBar {
-    position: relative;
-    margin-left: 5%;
-    text-align: center;
-    padding: 2% 11%;
-    background: #FAFAFA;
-    border: 1px solid lightgrey;
-    border-radius: 3px;
-    font-size: .9rem;
-}
-
-.search .searchBar:focus {
-    text-align: start;
-    z-index: 3;
-}
-
-.icons {
-    display: flex;
-    font-size: 1.6rem;
-    width: 8%;
 }
 
 .icons .far {
