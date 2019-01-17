@@ -1,69 +1,19 @@
-
-.post-container {
-    border: 1px solid lightgrey;
-    border-radius: 3px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 59%;
-    margin-bottom: 25px;
-}
-
-.post-header {
-    display: flex;
-    padding: 2%;
-    align-items: center;
-    border-bottom: 1px solid lightgrey;
-    width: 100%;
-}
-
 .hide {
     display: none;
 }
 
-.post-username {
-    padding-left: 2%;
-    font-weight: bold;
-}
-
-.user-profile-pic{
-    border-radius: 50%;
-    width: 6%;
-    height: 100%;
-}
-
-.user-post-pic {
-    width: 100%;
-    height: 100%;
-}
-
-.comments-section {
-    padding: 2% 3%;
-    width: 100%;
-}
-
-.post-icons {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.6rem;
-    width: 10%;
-}
-.post-icons span {
+.fa-heart {
     cursor: pointer;
 }
-.post-icons .fa-heart:hover {
+
+.fa-heart:hover {
     color: red;
+    
 }
 
 .liked {
     color: red;
 }
-
-.likes {
-    width: 100%;
-    font-weight: bold;
-}
-
 .comments {
     display: flex;
     width: 100%;

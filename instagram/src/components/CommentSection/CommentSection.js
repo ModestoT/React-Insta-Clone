@@ -1,8 +1,61 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import Comments from './Comments';
 import './CommentSection.css';
+
+const Post = styled.div `
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 59%;
+    margin-bottom: 25px;
+`;
+
+const Header = styled.div `
+    display: flex;
+    padding: 2%;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+    width: 100%;
+`;
+
+const UserProfilePic = styled.img `
+    border-radius: 50%;
+    width: 6%;
+    height: 100%;
+`;
+
+const UserName = styled.h1 `
+    font-weight: bold;
+    padding-left: 2%;
+`;
+
+const PostPic = styled.img `
+    width: 100%;
+    height: 100%
+`;
+
+
+const CommentsSection = styled.div `
+    padding: 2% 3%;
+    width: 100%;
+`;
+
+const PostIcons = styled.div `
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    width: 10%;
+`;
+
+const Likes = styled.div `
+    width: 100%;
+    font-weight: bold;
+`;
 
 class CommentSection extends React.Component {
     constructor(props){
@@ -27,21 +80,21 @@ class CommentSection extends React.Component {
 
     render() {
         return (
-            <div className="post-container">
-                <div className="post-header">
-                    <img className="user-profile-pic"src={this.props.post.thumbnailUrl} alt="Thumbnail"/>
-                    <h1 className="post-username">{this.props.post.username}</h1>
-                </div>
-                <img className="user-post-pic"src={this.props.post.imageUrl} alt="Post"/>
-                <div className="comments-section">
-                    <div className="post-icons"> 
+            <Post>
+                <Header>
+                    <UserProfilePic src={this.props.post.thumbnailUrl} alt="Thumbnail"/>
+                    <UserName>{this.props.post.username}</UserName>
+                </Header>
+                <PostPic src={this.props.post.imageUrl} alt="Post"/>
+                <CommentsSection>
+                    <PostIcons> 
                         <span onClick={this.adjustLikes}><i className="far fa-heart"></i></span>
                         <i className="far fa-comment"></i>
-                    </div>
-                        <p className="likes">{this.state.likes} likes</p>
+                    </PostIcons>
+                        <Likes>{this.state.likes} likes</Likes>
                         <Comments comments={this.props.post.comments} id={this.props.post.imageUrl} timestamp={this.props.post.timestamp}/>
-               </div>
-            </div>
+               </CommentsSection>
+            </Post>
         )
     }
     

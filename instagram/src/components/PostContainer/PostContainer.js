@@ -1,18 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 import CommentSection from '../CommentSection/CommentSection';
-import './PostContainer.css';
 
+const Posts = styled.div `
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5%;
+    font-Family: 'Roboto', Arial, sans-serif;
+`
 
 function PostContainer (props){
 
         return (
-            <div className="posts-container">
+            <Posts>
                 {props.postData.map((post, index) => {
                     return <CommentSection post={post} key={index} />
                 })}
-            </div>
+            </Posts>
         );
 }
 
