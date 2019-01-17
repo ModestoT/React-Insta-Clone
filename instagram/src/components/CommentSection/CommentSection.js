@@ -31,7 +31,7 @@ class CommentSection extends React.Component {
                         <i className="far fa-comment"></i>
                     </div>
                         <p className="likes">{this.state.likes} likes</p>
-                        <Comments comments={this.props.post.comments} id={this.props.post.imageUrl}/>
+                        <Comments comments={this.props.post.comments} id={this.props.post.imageUrl} timestamp={this.props.post.timestamp}/>
                </div>
             </div>
         )

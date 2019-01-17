@@ -26,28 +26,24 @@ class Comments extends React.Component {
 
         setTimeout(() => {
             this.saveComments();
-          }, 500);
+        }, 500);
     }
 
-    deleteComment = e => {
-        e.preventDefault();
-        const remove = e.target.id;
-        const comments = this.state.comments;
-        
-        comments.map((comment, index) => {
-            // if(remove === index){
-            //     return console.log(`Selected index ${index} to be removed`)
-            // } else {
-            //     return console.log("nothing")
-            // } 
-            return console.log(comment)
-        })
-        console.log(`Target id: ${remove}`)
+    deleteComment = id => {
+        const comments = [...this.state.comments];
+        const newComments = comments.slice(0, id);
+
+        this.setState({comments: newComments});
+
+        setTimeout(() => {
+            this.saveComments();
+        }, 500);
+
+        // console.log(newComments);
     };
 
     componentDidMount() {
         const id = this.props.id;
-        // console.log(localStorage.getItem(id))
         if (localStorage.getItem(id)) {
             this.setState({
                 comments: JSON.parse(localStorage.getItem(this.props.id))
@@ -75,11 +71,11 @@ class Comments extends React.Component {
                     return (
                         <div key ={index} id={index} className="comments">
                             <h2 className="comment-username">{comment.username}</h2>
-                            <p className="comment-text">{comment.text}<button className="delete-comment" id={index} onClick={this.deleteComment}>delete</button></p>
+                            <p className="comment-text">{comment.text}<button className="delete-comment" id={index} onClick={() => this.deleteComment(index)}>delete</button></p>
                         </div>
                     )
                 })}
-                <p className="timestamp">{Moment().startOf('day').fromNow().toUpperCase()}</p>
+                <p className="timestamp">{Moment(this.props.timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow().toUpperCase()}</p>
                 <form onSubmit={this.addNewComment}>
                     <input
                         className="comment-box"
