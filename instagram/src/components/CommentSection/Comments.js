@@ -1,6 +1,44 @@
 import  React from 'react';
 import PropTypes from 'prop-types';
 import Moment from 'moment';
+import styled from 'styled-components';
+
+const Comment = styled.div `
+    display: flex;
+    width: 100%;
+`;
+
+const UserName = styled.h2 `
+    font-weight: bold;
+`;
+
+const CommentText = styled.p `
+    padding-left: 1%;
+    width: 100%;
+`;
+
+const DeleteComment = styled.button `
+    opacity: 0;
+    &:hover {
+        opacity: 1;
+        background: red;
+        border: 1px solid red;
+    }
+`;
+
+const TimeStamp = styled.p `
+    border-bottom: 1px solid lightgrey;
+    font-size: .8rem;
+    color: darkgrey;
+`;
+
+const CommentBox = styled.input `
+    border: none;
+    font-size: .9rem;
+    margin-top: 15px;
+    height: 30px;
+    width: 100%;
+`;
 
 class Comments extends React.Component {
     constructor(props){
@@ -69,15 +107,15 @@ class Comments extends React.Component {
             <div>
                 {this.state.comments.map((comment, index) => {
                     return (
-                        <div key ={index} id={index} className="comments">
-                            <h2 className="comment-username">{comment.username}</h2>
-                            <p className="comment-text">{comment.text}<button className="delete-comment" id={index} onClick={() => this.deleteComment(index)}>delete</button></p>
-                        </div>
+                        <Comment key ={index} id={index}>
+                            <UserName>{comment.username}</UserName>
+                            <CommentText className="comment-text">{comment.text}<DeleteComment id={index} onClick={() => this.deleteComment(index)}>delete</DeleteComment></CommentText >
+                        </Comment>
                     )
                 })}
-                <p className="timestamp">{Moment(this.props.timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow().toUpperCase()}</p>
+                <TimeStamp>{Moment(this.props.timestamp, 'MMMM Do YYYY, h:mm:ss a').fromNow().toUpperCase()}</TimeStamp>
                 <form onSubmit={this.addNewComment}>
-                    <input
+                    <CommentBox
                         className="comment-box"
                         placeholder="Add a comment..."
                         value = {this.state.comment}

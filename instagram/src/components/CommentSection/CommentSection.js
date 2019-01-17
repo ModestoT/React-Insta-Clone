@@ -80,7 +80,7 @@ class CommentSection extends React.Component {
 
     render() {
         return (
-            <Post>
+            <Post className="post-container">
                 <Header>
                     <UserProfilePic src={this.props.post.thumbnailUrl} alt="Thumbnail"/>
                     <UserName>{this.props.post.username}</UserName>

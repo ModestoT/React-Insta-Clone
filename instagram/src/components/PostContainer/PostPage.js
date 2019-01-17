@@ -23,7 +23,7 @@ class PostPage extends React.Component {
   filterPost = () => {
     const currentList = document.querySelectorAll('.post-container');
     const newList = Array.from(currentList);
-    
+    console.log(newList)
     newList.forEach(post => {
       if(post.firstChild.textContent.indexOf(this.state.filterPost) === -1){
         post.classList.add('hide');
@@ -31,6 +31,7 @@ class PostPage extends React.Component {
         post.classList.remove('hide');
       }
     })
+    
   }
 
 
