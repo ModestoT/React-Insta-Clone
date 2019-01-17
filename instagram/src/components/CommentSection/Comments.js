@@ -23,6 +23,11 @@ const DeleteComment = styled.button `
         opacity: 1;
         background: red;
         border: 1px solid red;
+        border-radius: 3px;
+        color: white;
+        margin-left: 2%;
+        width: 10%;
+        height: 90%;
     }
 `;
 
@@ -109,7 +114,7 @@ class Comments extends React.Component {
                     return (
                         <Comment key ={index} id={index}>
                             <UserName>{comment.username}</UserName>
-                            <CommentText className="comment-text">{comment.text}<DeleteComment id={index} onClick={() => this.deleteComment(index)}>delete</DeleteComment></CommentText >
+                            <CommentText>{comment.text}<DeleteComment id={index} onClick={() => this.deleteComment(index)}>Delete</DeleteComment></CommentText >
                         </Comment>
                     )
                 })}
