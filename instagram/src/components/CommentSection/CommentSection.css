@@ -46,7 +46,7 @@
     display: flex;
     justify-content: space-between;
     font-size: 1.6rem;
-    width: 11%;
+    width: 10%;
 }
 .post-icons span {
     cursor: pointer;
