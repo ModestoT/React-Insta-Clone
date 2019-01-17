@@ -44,11 +44,11 @@
 
 .post-icons {
     display: flex;
+    justify-content: space-between;
     font-size: 1.6rem;
-    width: 15%;
+    width: 11%;
 }
 .post-icons span {
-    padding-right: 4%;
     cursor: pointer;
 }
 .post-icons .fa-heart:hover {

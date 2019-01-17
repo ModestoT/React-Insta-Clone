@@ -1,8 +1,8 @@
 header {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: space-between;
-    padding: 25px 10%;
+    padding: 15px 4%;
     border-bottom: 1px solid lightgrey;
 }
 
@@ -15,7 +15,7 @@ header {
     font-size: 2rem;
 }
 
-.far {
+.icons .far {
     padding-right: 17%;
 }
 
