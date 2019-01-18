@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 import Comments from './Comments';
 import './CommentSection.css';
@@ -78,21 +79,25 @@ class CommentSection extends React.Component {
         }
     };
 
+    
+
     render() {
         return (
             <Post className="post-container">
-                <Header>
-                    <UserProfilePic src={this.props.post.thumbnailUrl} alt="Thumbnail"/>
-                    <UserName>{this.props.post.username}</UserName>
-                </Header>
-                <PostPic src={this.props.post.imageUrl} alt="Post"/>
+                <Link to ={`posts/${this.props.postId}`}>
+                    <Header>
+                        <UserProfilePic src={this.props.post.thumbnailUrl} alt="Thumbnail"/>
+                        <UserName>{this.props.post.username}</UserName>
+                    </Header>
+                    <PostPic src={this.props.post.imageUrl} alt="Post"/>
+                </Link>
                 <CommentsSection>
                     <PostIcons> 
                         <span onClick={this.adjustLikes}><i className="far fa-heart"></i></span>
                         <i className="far fa-comment"></i>
                     </PostIcons>
                         <Likes>{this.state.likes} likes</Likes>
-                        <Comments comments={this.props.post.comments} id={this.props.post.imageUrl} timestamp={this.props.post.timestamp}/>
+                        <Comments comments={this.props.post.comments} id={this.props.post.imageUrl} timestamp={this.props.post.timestamp} postId={this.props.postId}/>
                </CommentsSection>
             </Post>
         )

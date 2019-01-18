@@ -41,10 +41,12 @@ class PostPage extends React.Component {
   }
 
     render() {
-        return <div>
+      return (
+        <div>
             <SearchBar handleSearch={this.handleSearch} filterPost={this.state.filterPost}/>
             <PostContainer postData={this.state.dataArray} />
         </div>
+      );
     }
 };
 

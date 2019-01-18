@@ -20,7 +20,7 @@ function PostContainer (props){
         return (
             <Posts>
                 {props.postData.map((post, index) => {
-                    return <CommentSection post={post} key={index} />
+                    return <CommentSection post={post} key={index} postId={index}/>
                 })}
             </Posts>
         );
