@@ -65,6 +65,10 @@ class CommentSection extends React.Component {
             likes: props.post.likes,
             liked: false
         };
+        // const item = props.postData.find(
+        //     item => `${item.postId}` === props.match.params.postId
+        // );
+        // console.log(item)
     }
 
     adjustLikes = (e) => {
@@ -80,11 +84,10 @@ class CommentSection extends React.Component {
     };
 
     
-
     render() {
         return (
             <Post className="post-container">
-                <Link to ={`posts/${this.props.postId}`}>
+                <Link to ={`/posts/${this.props.postId}`}>
                     <Header>
                         <UserProfilePic src={this.props.post.thumbnailUrl} alt="Thumbnail"/>
                         <UserName>{this.props.post.username}</UserName>

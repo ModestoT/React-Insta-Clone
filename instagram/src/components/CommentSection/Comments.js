@@ -88,6 +88,7 @@ class Comments extends React.Component {
 
     componentDidMount() {
         const id = this.props.id;
+        console.log(this.props.comments.match);
         if (localStorage.getItem(id)) {
             this.setState({
                 comments: JSON.parse(localStorage.getItem(this.props.id))
