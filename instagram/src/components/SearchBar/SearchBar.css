@@ -1,0 +1,21 @@
+.fa-instagram {
+    font-size: 2rem;
+}
+
+.fa-search {
+    position: relative;
+    top: 28px;
+    left: 37%;
+    font-size: 13px;
+    z-index: 2;
+    color: #C9CACC;
+}
+
+.icons .far {
+    padding-right: 17%;
+    cursor: pointer;
+}
+
+.icons .far:hover {
+    color: darkgrey;
+}
